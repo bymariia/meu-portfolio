@@ -1,0 +1,414 @@
+/* Importação das fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* Variáveis para suas cores, para facilitar o uso */
+:root {
+    --cor-principal: #c594aa;
+    --cor-secundaria: #fdcae1;
+    --cor-clara: #ffe5f0;
+    --cor-destaque-verde: #5dc1b9;
+    --cor-destaque-azul: #9ce0db;
+    --cor-texto-escuro: #333;
+    --cor-texto-claro: #fff;
+    --cor-detalhe: #aaa; /* Nova cor para detalhes */
+}
+
+/* Estilização básica e global */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-clara);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilização do cabeçalho e navegação */
+header {
+    background: linear-gradient(to right, var(--cor-principal), var(--cor-secundaria));
+    color: var(--cor-texto-claro);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-titulo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-titulo p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+    color: var(--cor-clara);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+}
+
+header nav a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: var(--cor-destaque-verde);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--cor-destaque-verde);
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* Estilização das seções */
+section {
+    padding: 8rem 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+/* Layout em duas colunas para a seção Sobre Mim */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    text-align: left;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.sobre-images {
+    position: relative;
+    min-width: 300px;
+    margin-top: 2rem;
+}
+
+.sobre-images .foto-perfil {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--cor-principal);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.sobre-images .foto-perfil:hover {
+    transform: scale(1.05);
+}
+
+.sobre-images .laptop-xuxa {
+    width: 150px;
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: rotate-image 5s infinite linear;
+}
+
+@keyframes rotate-image {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+/* Estilo para títulos */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    color: var(--cor-principal);
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background-color: var(--cor-destaque-verde);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* Estilização de parágrafos e textos */
+p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 1.5rem auto;
+}
+
+/* Ênfase para a frase motivacional */
+.frase-destaque {
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+    font-style: italic;
+    font-weight: 700; /* Deixa o texto mais encorpado */
+    color: var(--cor-destaque-verde);
+    margin-top: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
+}
+
+/* Efeito de degradê no fundo da seção sobre mim */
+#sobre {
+    background: linear-gradient(to bottom, var(--cor-clara), var(--cor-secundaria));
+}
+
+/* Estilização da seção de habilidades (Cards) */
+#habilidades {
+    background-color: var(--cor-secundaria);
+}
+
+.habilidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+
+.habilidade-card {
+    background-color: var(--cor-clara);
+    color: var(--cor-principal);
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.habilidade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 0 15px var(--cor-destaque-verde);
+}
+
+.habilidade-card i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-destaque-verde);
+    transition: color 0.3s ease;
+}
+
+.habilidade-card:hover i {
+    color: var(--cor-principal);
+}
+
+.habilidade-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilização da seção de certificações (Cards) */
+#certificacoes {
+    background-color: var(--cor-clara);
+}
+
+.certificacoes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+}
+
+.certificado-card {
+    background-color: var(--cor-destaque-azul);
+    color: var(--cor-texto-claro);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.certificado-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 0 20px var(--cor-destaque-azul);
+}
+
+.certificado-card h3 {
+    color: var(--cor-texto-claro);
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 0.5rem;
+}
+
+.certificado-card p {
+    color: var(--cor-texto-claro);
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+/* Estilização da seção de dicas */
+#dicas {
+    background-color: var(--cor-secundaria);
+}
+
+#dicas .dicas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+}
+
+.dica {
+    background-color: var(--cor-destaque-azul);
+    color: var(--cor-texto-claro);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.dica:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dica h3 {
+    color: var(--cor-texto-claro);
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dica p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+
+/* Estilização da seção de contato (Com ícones) */
+#contato {
+    background-color: var(--cor-clara);
+}
+
+#contato .social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+#contato .social-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--cor-principal);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#contato .social-links a:hover {
+    transform: translateY(-5px);
+    color: var(--cor-destaque-verde);
+}
+
+#contato .social-links i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+#contato .social-links a:hover i {
+    color: var(--cor-destaque-verde);
+}
+
+/* Estilização do rodapé */
+footer {
+    background: linear-gradient(to right, var(--cor-principal), var(--cor-secundaria));
+    color: var(--cor-texto-claro);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Animação de entrada das seções */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animação para os cards de Habilidades e Certificações */
+.habilidade-card, .certificado-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}

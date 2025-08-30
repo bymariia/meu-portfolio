@@ -3,12 +3,12 @@
 
 /* Variáveis para suas cores, para facilitar o uso */
 :root {
-    --cor-principal: #5e4a5d; /* Malva Escuro */
-    --cor-secundaria: #8c6a8b; /* Lilás Sutil */
-    --cor-clara: #f7e9f7; /* Branco Rosado */
-    --cor-destaque-verde: #4c8a81; /* Verde Teal Escuro */
-    --cor-destaque-azul: #61b1a7; /* Ciano Acinzentado */
-    --cor-texto-escuro: #2b2b2b; /* Cinza Escuro */
+    --cor-principal: #c594aa;
+    --cor-secundaria: #fdcae1;
+    --cor-clara: #ffe5f0;
+    --cor-destaque-verde: #4b9f97; /* Verde levemente mais escuro */
+    --cor-destaque-azul: #9ce0db;
+    --cor-texto-escuro: #333;
     --cor-texto-claro: #fff;
     --cor-detalhe: #aaa;
 }

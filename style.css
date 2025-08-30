@@ -417,19 +417,55 @@ footer {
 @media (max-width: 768px) {
     header nav {
         flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
+        align-items: center;
     }
 
     .header-titulo {
         align-items: center;
         text-align: center;
     }
+
+    /* Esconde o menu padrão e mostra o botão do hambúrguer */
+    header nav ul {
+        display: none; /* Esconde a lista de links por padrão */
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(253, 202, 225, 0.95);
+        padding: 1rem 0;
+        border-radius: 10px;
+    }
+
+    /* Estilo do menu quando ativo */
+    header nav ul.menu-active {
+        display: flex; /* Mostra o menu quando a classe 'active' está presente */
+    }
+
+    header nav .menu-hamburguer {
+        display: block; /* Mostra o botão do hambúrguer no celular */
+        background: transparent;
+        border: none;
+        color: var(--cor-texto-claro);
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+        top: 1.5rem;
+        z-index: 1001;
+    }
+
+    /* Oculta o ícone de hambúrguer em telas maiores */
+    header nav .menu-hamburguer {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        header nav .menu-hamburguer {
+            display: block;
+        }
+    }
+
 
     section {
         padding: 5rem 2%;

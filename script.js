@@ -55,4 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (certificacoesSection) {
         cardObserver.observe(certificacoesSection);
     }
+
+    // Funcionalidade do menu hambúrguer para mobile
+    const hamburgerBtn = document.querySelector('.menu-hamburguer');
+    const navMenu = document.querySelector('header nav ul');
+
+    hamburgerBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('menu-active');
+    });
+
+    // Fechar o menu ao clicar em um link
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('menu-active');
+        });
+    });
 });

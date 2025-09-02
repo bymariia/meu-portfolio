@@ -1,73 +1,160 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Animação de seções
-    const fadeInSections = document.querySelectorAll('.fade-in-section');
+    // Código para o Carrossel de Certificados
+    const carrossel = document.querySelector('.certificacoes-carrossel');
+    if (carrossel) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2
-    };
-
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
+        carrossel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            carrossel.classList.add('active');
+            startX = e.pageX - carrossel.offsetLeft;
+            scrollLeft = carrossel.scrollLeft;
         });
-    }, observerOptions);
 
-    fadeInSections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-
-    // Animação dos cards de habilidade e certificação
-    const skillCards = document.querySelectorAll('#habilidades .habilidade-card');
-    const certCards = document.querySelectorAll('#certificacoes .certificado-card');
-
-    const cardObserverOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2
-    };
-
-    const cardObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const cards = entry.target.querySelectorAll('.habilidade-card, .certificado-card');
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, index * 150); // Atraso de 150ms para cada card
-                });
-                observer.unobserve(entry.target);
-            }
+        carrossel.addEventListener('mouseleave', () => {
+            isDown = false;
+            carrossel.classList.remove('active');
         });
-    }, cardObserverOptions);
 
-    const habilidadesSection = document.getElementById('habilidades');
-    if (habilidadesSection) {
-        cardObserver.observe(habilidadesSection);
+        carrossel.addEventListener('mouseup', () => {
+            isDown = false;
+            carrossel.classList.remove('active');
+        });
+
+        carrossel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carrossel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carrossel.scrollLeft = scrollLeft - walk;
+        });
     }
 
-    const certificacoesSection = document.getElementById('certificacoes');
-    if (certificacoesSection) {
-        cardObserver.observe(certificacoesSection);
-    }
+    // Código para a Animação ao Rolar (Fade-in)
+    const fadeOnScroll = () => {
+        const elementos = document.querySelectorAll('.animate-on-scroll');
+        const windowHeight = window.innerHeight;
 
-    // Funcionalidade do menu hambúrguer para mobile
-    const hamburgerBtn = document.querySelector('.menu-hamburguer');
-    const navMenu = document.querySelector('header nav ul');
-
-    hamburgerBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('menu-active');
-    });
-
-    // Fechar o menu ao clicar em um link
-    navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('menu-active');
+        elementos.forEach(elemento => {
+            const elementPosition = elemento.getBoundingClientRect().top;
+            if (elementPosition < windowHeight - 150) {
+                elemento.classList.add('visible');
+            }
         });
-    });
+    };
+
+    window.addEventListener('scroll', fadeOnScroll);
+    fadeOnScroll();
+
+    // Código para o Fundo Animado de Partículas
+    if (typeof particlesJS !== 'undefined') {
+        // Configura as partículas para a div com id="particles-js"
+        particlesJS('particles-js', { 
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    }
 });

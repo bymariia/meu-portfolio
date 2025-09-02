@@ -3,26 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malu Pereto - Portfólio</title>
+    <title>Portfólio de Maria Luiza Pereto</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
+    
     <header>
         <nav>
-            <div class="header-titulo">
-                <h1>Malu Pereto</h1>
-                <p>Full-Stack Developer & Data Analyst</p>
-            </div>
-            <button class="menu-hamburguer" aria-label="Abrir menu">
-                <i class="fas fa-bars"></i>
-            </button>
             <ul>
-                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#sobre-mim">Sobre Mim</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#certificacoes">Certificações</a></li>
                 <li><a href="#projetos">Projetos</a></li>
@@ -32,212 +22,202 @@
         </nav>
     </header>
 
-    <section id="sobre" class="fade-in-section">
-        <h2>Seja bem-vindo(a)!</h2>
-        <div class="sobre-container">
-            <div class="sobre-images">
-                <img src="assets/images/foto-perfil.jpg" alt="Foto de perfil de Malu Pereto" class="foto-perfil">
+    <section id="boas-vindas" class="animate-on-scroll">
+        <div id="particles-js"></div>
+        <h1>Olá, seja bem-vindo ao meu espaço criativo!</h1>
+        <p>Construindo o futuro, linha por linha.</p>
+    </section>
+
+    <section id="sobre-mim" class="animate-on-scroll">
+        <div class="container">
+            <div class="foto">
+                <img src="assets/images/foto-perfil.jpg" alt="Foto de Maria Luiza Pereto">
             </div>
-            <div class="sobre-texto">
-                <p>
-                    Olá, eu sou Maria Luiza, uma desenvolvedora Full-Stack e analista de dados em formação. Tenho 18 anos e sou estudante de Ciência da Computação na Atitus Educação. Atualmente, sou bolsista no programa AWS Cloud Data Engineer da Compass UOL, onde aprofundo meus conhecimentos em soluções de dados em nuvem.
-                </p>
-                <p>
-                    Minha paixão pela tecnologia me levou a explorar diversas áreas, desde o desenvolvimento web (HTML, CSS, JavaScript) até a análise e visualização de dados com Python (Pandas e Matplotlib) e gerenciamento de banco de dados (SQL).
-                </p>
-                <p>
-                    Este portfólio é um reflexo do meu aprendizado e dedicação contínua. Acredito que a combinação de criatividade, lógica e uma abordagem proativa é fundamental para construir soluções inovadoras. Estou sempre em busca de novos desafios para aplicar meus conhecimentos e evoluir como profissional.
-                </p>
+            <div class="texto">
+                <h2>Sobre mim</h2>
+                <p>Olá, eu sou Maria Luiza, uma desenvolvedora Full-Stack e analista de dados em formação. Tenho 18 anos e sou estudante de Ciência da Computação na Atitus Educação. Atualmente, sou bolsista no programa AWS Cloud Data Engineer da Compass UOL, onde aprofundo meus conhecimentos em soluções de dados em nuvem. Minha paixão pela tecnologia me levou a explorar diversas áreas, desde o desenvolvimento web (HTML, CSS, JavaScript) até a análise e visualização de dados com Python (Pandas e Matplotlib) e gerenciamento de banco de dados (SQL). Este portfólio é um reflexo do meu aprendizado e dedicação contínua. Acredito que a combinação de criatividade, lógica e uma abordagem proativa é fundamental para construir soluções inovadoras. Estou sempre em busca de novos desafios para aplicar meus conhecimentos e evoluir como profissional.</p>
             </div>
         </div>
     </section>
 
-    <section id="habilidades" class="fade-in-section">
+    <section id="habilidades" class="animate-on-scroll">
         <h2>Habilidades Técnicas</h2>
-        <div class="habilidades-container">
-            <div class="habilidade-card">
+        <div class="habilidades-grid">
+            <div class="habilidade-item">
                 <i class="fab fa-python"></i>
-                <h3>Python</h3>
+                <p>Python</p>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-item">
+                <i class="fab fa-java"></i>
+                <p>Java</p>
+            </div>
+            <div class="habilidade-item">
                 <i class="fab fa-js-square"></i>
-                <h3>JavaScript</h3>
+                <p>JavaScript</p>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-item">
                 <i class="fab fa-html5"></i>
-                <h3>HTML</h3>
+                <p>HTML</p>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-item">
                 <i class="fab fa-css3-alt"></i>
-                <h3>CSS</h3>
+                <p>CSS</p>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-item">
                 <i class="fas fa-database"></i>
-                <h3>SQL</h3>
+                <p>SQL</p>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-item">
                 <i class="fas fa-database"></i>
-                <h3>PostgreSQL</h3>
+                <p>PostgreSQL</p>
             </div>
-            <div class="habilidade-card">
-                <i class="fab fa-git-alt"></i>
-                <h3>Git e GitHub</h3>
+            <div class="habilidade-item">
+                <i class="fab fa-docker"></i>
+                <p>Docker</p>
             </div>
-            <div class="habilidade-card">
-                <i class="fas fa-code"></i>
-                <h3>Visual Studio Code</h3>
-            </div>
-            <div class="habilidade-card">
+            <div class="habilidade-item">
                 <i class="fas fa-chart-line"></i>
-                <h3>Pandas</h3>
+                <p>Pandas</p>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-item">
                 <i class="fas fa-chart-bar"></i>
-                <h3>Matplotlib</h3>
+                <p>Matplotlib</p>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-item">
                 <i class="fas fa-gamepad"></i>
-                <h3>Pygame</h3>
+                <p>Pygame</p>
             </div>
-            <div class="habilidade-card">
-                <i class="fas fa-pencil-alt"></i>
-                <h3>Turtle</h3>
+            <div class="habilidade-item">
+                <i class="fas fa-paint-brush"></i>
+                <p>Turtle</p>
             </div>
-            <div class="habilidade-card">
-                <i class="fas fa-globe"></i>
-                <h3>Inglês Intermediário</h3>
+            <div class="habilidade-item">
+                <i class="fab fa-git-alt"></i>
+                <p>Git</p>
+            </div>
+            <div class="habilidade-item">
+                <i class="fab fa-github"></i>
+                <p>GitHub</p>
+            </div>
+            <div class="habilidade-item">
+                <i class="fas fa-code"></i>
+                <p>VS Code</p>
+            </div>
+            <div class="habilidade-item">
+                <i class="fas fa-language"></i>
+                <p>Inglês Intermediário</p>
             </div>
         </div>
     </section>
 
-    <section id="certificacoes" class="fade-in-section">
+    <section id="certificacoes" class="animate-on-scroll">
         <h2>Certificações</h2>
-        <div class="certificacoes-container">
+        <div class="certificacoes-carrossel">
             <div class="certificado-card">
-                <h3>Ciência de Dados para Iniciantes com Projetos Reais</h3>
-                <p>Udemy</p>
-                <p>Instrutor: Andre Iacono</p>
-                <p>Duração: 4.5 horas no total</p>
-                <p>Conclusão: 22 de Agosto de 2025</p>
-            </div>
-            <div class="certificado-card">
-                <h3>Curso Git e GitHub + Projetos Reais</h3>
-                <p>Udemy</p>
-                <p>Instrutor: Andre Iacono</p>
-                <p>Duração: 2.5 horas no total</p>
-                <p>Conclusão: 5 de Agosto de 2025</p>
+                <h3>Python 3 - Curso Completo do Básico ao Avançado</h3>
+                <p>Duração: 26 horas no total</p>
+                <p>Concluído em: 20 de Agosto de 2025</p>
             </div>
             <div class="certificado-card">
                 <h3>SQL para Análise de Dados: Do básico ao avançado</h3>
-                <p>Udemy</p>
-                <p>Instrutor: Midori Toyota</p>
                 <p>Duração: 6 horas no total</p>
-                <p>Conclusão: 11 de Agosto de 2025</p>
+                <p>Concluído em: 11 de Agosto de 2025</p>
             </div>
             <div class="certificado-card">
-                <h3>Python 3 - Curso Completo do Básico ao Avançado</h3>
-                <p>Udemy</p>
-                <p>Instrutores: Leonardo Moura Leitao, Juracy Filho, Cod3r Cursos Online</p>
-                <p>Duração: 26 horas no total</p>
-                <p>Conclusão: 20 de Agosto de 2025</p>
+                <h3>Ciência de Dados para Iniciantes com Projetos Reais</h3>
+                <p>Duração: 4,5 horas no total</p>
+                <p>Concluído em: 22 de Agosto de 2025</p>
+            </div>
+            <div class="certificado-card">
+                <h3>Estatística Descritiva com Python</h3>
+                <p>Duração: 6 horas no total</p>
+                <p>Concluído em: 31 de Agosto de 2025</p>
+            </div>
+            <div class="certificado-card">
+                <h3>Curso Git e GitHub + Projetos Reais</h3>
+                <p>Duração: 2,5 horas no total</p>
+                <p>Concluído em: 5 de Agosto de 2025</p>
+            </div>
+            <div class="certificado-card">
+                <h3>Data & Analytics - PB - AWS (1/10)</h3>
+                <p>Duração: 1,5 horas no total</p>
+                <p>Concluído em: 13 de Agosto de 2025</p>
+            </div>
+            <div class="certificado-card">
+                <h3>Data & Analytics - PB - AWS (2/10)</h3>
+                <p>Duração: 1 hora no total</p>
+                <p>Concluído em: 27 de Agosto de 2025</p>
             </div>
             <div class="certificado-card">
                 <h3>Introdução à Ciência de Dados</h3>
-                <p>Santander | Open Academy</p>
-                <p>Duração: 6 horas no total</p>
-                <p>Conclusão: 2 de Junho de 2025</p>
-            </div>
-            <div class="certificado-card">
-                <h3>Participação no Tech Talks</h3>
-                <p>Atitus Educação</p>
-                <p>Duração: 2 horas no total</p>
-                <p>Conclusão: 14 de Maio de 2025</p>
-            </div>
-            <div class="certificado-card">
-                <h3>Marketing Profissionalizante EAD</h3>
-                <p>Faculdade Anhanguera</p>
-                <p>Duração: 2 meses</p>
-                <p>Período: 16 de Abril de 2024 - 25 de Junho de 2024</p>
-            </div>
-            <div class="certificado-card">
-                <h3>Excel do Básico ao Avançado</h3>
-                <p>SENAC Passo Fundo</p>
-                <p>Duração: 2 meses</p>
-                <p>Período: 7 de Fevereiro de 2023 - 6 de Abril de 2023</p>
-            </div>
-            <div class="certificado-card">
-                <h3>Qualificações em Oratória</h3>
-                <p>Beespeak Passo Fundo</p>
-                <p>Qualificações: 2</p>
-            </div>
-            <div class="certificado-card">
-                <h3>Curso de Inglês</h3>
-                <p>Nexus Escola de Idiomas</p>
-                <p>Nível: Intermediário</p>
-                <p>Status: Cursando</p>
+                <p>Duração: 6 horas</p>
+                <p>Concluído em: 2 de Junho de 2025</p>
             </div>
         </div>
     </section>
 
-    <section id="projetos" class="fade-in-section">
+    <section id="projetos" class="animate-on-scroll">
         <h2>Meus Projetos</h2>
-        <p>Projetos aqui em breve!</p>
+        <p>Projetos aqui em breve.</p>
+        <div class="projetos-grid">
+            </div>
     </section>
 
-    <section id="dicas" class="fade-in-section">
-        <h2>Dicas pra quem tá começando 🌱</h2>
-        <p>
-            No início, tudo pode parecer um pouco assustador. Mas a minha jornada me ensinou algumas coisas que podem te ajudar:
-        </p>
-        <div class="dicas-container">
-            <div class="dica">
+    <section id="dicas" class="animate-on-scroll">
+        <h2>Para quem está no início da jornada</h2>
+        <div class="dicas-grid">
+            <div class="dica-card">
                 <h3>Não se compare.</h3>
                 <p>Cada pessoa tem seu tempo. O importante é manter a consistência, e não a velocidade.</p>
             </div>
-            <div class="dica">
+            <div class="dica-card">
                 <h3>Errou? Ótimo.</h3>
-                <p>Bug e erro são professores disfarçados é ali que você aprende de verdade.</p>
+                <p>Bug e erro são professores disfarçados. É ali que você aprende de verdade.</p>
             </div>
-            <div class="dica">
+            <div class="dica-card">
                 <h3>Curta o processo.</h3>
                 <p>Programar é uma jornada longa e contínua. Valorize cada pequeno avanço.</p>
             </div>
-            <div class="dica">
+            <div class="dica-card">
                 <h3>Pega leve com você.</h3>
                 <p>Tenha paciência, não se cobre além da conta. Tudo leva tempo.</p>
             </div>
-            <div class="dica">
+            <div class="dica-card">
                 <h3>Peça ajuda sem medo.</h3>
                 <p>Perguntar nunca é sinal de fraqueza, e sim de inteligência. Aproveite professores, colegas e comunidades.</p>
             </div>
-            <div class="dica">
+            <div class="dica-card">
                 <h3>Construa conexões.</h3>
                 <p>Fazer amigos na área é tão importante quanto aprender a programar. Eles podem abrir portas para projetos e oportunidades futuras.</p>
             </div>
         </div>
-        <p>
-            No fim, o que faz a diferença não é ser o mais rápido ou o "gênio", mas sim quem consegue se manter firme, aprendendo e evoluindo um pouquinho a cada dia. 🚀
-        </p>
+        <p class="conclusao-dicas">No fim, o que faz a diferença não é ser o mais rápido ou o "gênio", mas sim quem consegue se manter firme, aprendendo e evoluindo um pouquinho a cada dia.</p>
     </section>
 
-    <section id="contato" class="fade-in-section">
-        <h2>💬 Vamos conversar!</h2>
-        <p>
-            Se você tem uma ideia de projeto, quer trocar uma ideia sobre programação ou só dar um “oi”, me manda uma mensagem — vou adorar conversar! 🚀
-        </p>
-        <div class="social-links">
-            <a href="mailto:malluupereto@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a>
-            <a href="https://www.linkedin.com/in/bymariaap" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-            <a href="https://github.com/bymariia" target="_blank"><i class="fab fa-github"></i><span>GitHub</span></a>
-            <a href="https://www.instagram.com/mallup._" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+    <section id="contato" class="animate-on-scroll">
+        <h2>Vamos nos conectar?</h2>
+        <p class="mensagem-contato">Sinta-se à vontade para me mandar uma mensagem. Estou sempre aberta a novas ideias e oportunidades!</p>
+        <div class="contato-links">
+            <a href="https://www.instagram.com/mallup._" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/bymariaap" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/bymariia" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:malluupereto@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 - Maria Luiza Pereto. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Maria Luiza Pereto. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>

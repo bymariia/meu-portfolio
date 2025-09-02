@@ -50,8 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Código para o Fundo Animado de Partículas
     if (typeof particlesJS !== 'undefined') {
-        // Configura as partículas para a div com id="particles-js"
-        particlesJS('particles-js', { 
+        particlesJS('particles-js', {
             "particles": {
                 "number": {
                     "value": 80,
@@ -157,4 +156,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "retina_detect": true
         });
     }
+
+    // Novo código para o menu hamburguer
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('nav-open');
+    });
+
+    // Fechar o menu ao clicar em um link
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('nav-open');
+        });
+    });
 });

@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Código para o Carrossel de Certificados
-    const carrossel = document.querySelector('.certificacoes-carrossel');
-    if (carrossel) {
+
+    // Função reutilizável para inicializar carrosséis arrastáveis
+    const initCarousel = (selector) => {
+        const carrossel = document.querySelector(selector);
+        if (!carrossel) return;
+
         let isDown = false;
         let startX;
         let scrollLeft;
@@ -30,7 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const walk = (x - startX) * 2;
             carrossel.scrollLeft = scrollLeft - walk;
         });
-    }
+    };
+
+    // Inicializa os dois carrosséis
+    initCarousel('.certificacoes-carrossel');
+    initCarousel('.emblemas-carrossel');
 
     // Código para a Animação ao Rolar (Fade-in)
     const fadeOnScroll = () => {
@@ -157,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Novo código para o menu hamburguer
+    // Código para o menu hamburguer
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
 

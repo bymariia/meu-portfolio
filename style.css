@@ -6,7 +6,9 @@
     --cor-azul-escuro: #008080;
     --cor-verde-limao: #B3E369;
     --cor-preto: #333333;
+    --cor-preto-fundo: #000000;
     --cor-branco: #FFFFFF;
+    --cor-cinza-texto: #A0A0A0;
 }
 
 /* Estilos Globais */
@@ -33,7 +35,7 @@ p {
 }
 
 /* IMPORTAÇÃO DE FONTES ATUALIZADA */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Raleway:wght@400;600;700&display=swap');
 
 /* Estilização das Seções */
 section {
@@ -43,7 +45,7 @@ section {
     overflow: hidden;
 }
 
-h1, h2, h3 {
+h1, h3 {
     margin-bottom: 25px;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
@@ -54,13 +56,41 @@ h1 {
     margin-bottom: 15px;
 }
 
+/* AJUSTADO: ESTILO DE DESTAQUE PARA TÍTULOS DE SEÇÃO (h2) */
 h2 {
-    font-size: 2.5em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; 
+    font-size: 2.5em; 
+    color: var(--cor-preto-fundo);
+    margin-bottom: 50px;
+    position: relative; 
+    display: inline-block; /* Para o sublinhado funcionar */
 }
 
-/* Navegação */
+/* NOVO: EFEITO DE SUBILNHADO ROSA NOS TÍTULOS (h2) */
+h2::after {
+    content: '';
+    display: block;
+    width: 50%; /* Largura da linha */
+    height: 4px;
+    background: var(--cor-rosa-escuro);
+    margin: 10px auto 0; /* Centraliza a linha e dá espaçamento */
+    border-radius: 2px;
+}
+
+/* Sobrescrevendo o estilo h2 na seção de certificações (fundo escuro) */
+#certificacoes h2 {
+    color: var(--cor-branco);
+    text-shadow: none;
+}
+/* Sublinhado h2 Certificações (cor branca para contraste) */
+#certificacoes h2::after {
+    background: var(--cor-branco);
+}
+
+/* Navegação (Mantido) */
 header {
-    background-color: var(--cor-preto);
+    background-color: var(--cor-preto-fundo); 
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
@@ -90,7 +120,7 @@ header nav ul li a:hover {
     color: var(--cor-rosa-escuro);
 }
 
-/* Botão do Menu Hamburguer */
+/* Botão do Menu Hamburguer (Mantido) */
 .menu-toggle {
     display: none;
     background: transparent;
@@ -110,9 +140,9 @@ header nav ul li a:hover {
     transition: 0.4s;
 }
 
-/* Seção de Boas-vindas */
+/* Seção de Boas-vindas (Mantido) */
 #boas-vindas {
-    background-color: var(--cor-rosa-escuro);
+    background-color: var(--cor-preto-fundo);
     color: var(--cor-branco);
     padding: 120px 20px;
     display: flex;
@@ -121,22 +151,82 @@ header nav ul li a:hover {
     align-items: center;
     position: relative;
     z-index: 1;
+    min-height: 100vh; 
+    padding-bottom: 50px;
 }
 
-#boas-vindas > h1,
-#boas-vindas > p {
+.big-title {
+    font-family: 'Lato', sans-serif; 
+    font-weight: 900;
+    font-size: clamp(3em, 12vw, 10em);
+    line-height: 0.9; 
+    margin: 0;
+    text-transform: uppercase;
     position: relative;
     z-index: 2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    white-space: nowrap;
 }
 
-#boas-vindas p {
-    font-size: 1.8em;
-    max-width: 700px;
-    margin-top: 10px;
+.outline-fullstack {
+    color: var(--cor-rosa-escuro); 
+    -webkit-text-stroke: 1px var(--cor-rosa-escuro); 
+    text-stroke: 1px var(--cor-rosa-escuro);
 }
 
-/* Container para as partículas */
+/* Informações de Localização e Disponibilidade (Mantido) */
+.info-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 2;
+    color: var(--cor-branco);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.info-bar p {
+    font-size: 1.1em;
+    font-weight: 400;
+    text-align: left;
+}
+
+.info-bar p i {
+    margin-right: 8px;
+    color: var(--cor-rosa-escuro);
+}
+
+.disponibilidade {
+    text-align: right;
+}
+
+.disponibilidade p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: var(--cor-cinza-texto);
+}
+
+.agenda-disponivel {
+    display: inline-block;
+    background-color: var(--cor-rosa-escuro); 
+    color: var(--cor-branco);
+    padding: 5px 10px;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 77, 139, 0.5); 
+}
+
+.agenda-disponivel i {
+    margin-right: 5px;
+}
+
+/* Container para as partículas (Mantido) */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -147,22 +237,29 @@ header nav ul li a:hover {
 }
 
 
-/* Seção Sobre Mim */
+/* Seção Sobre Mim (Mantido) */
 #sobre-mim {
     background-color: var(--cor-rosa-claro);
     padding-bottom: 80px;
 }
 
-#sobre-mim .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container-sobre-mim {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-#sobre-mim .foto img {
-    width: 220px;
-    height: 220px;
+.foto-sobre-mim {
+    text-align: center; 
+}
+
+.foto-sobre-mim img {
+    width: 300px; 
+    height: 300px; 
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid var(--cor-branco);
@@ -170,25 +267,33 @@ header nav ul li a:hover {
     transition: transform 0.4s ease;
 }
 
-#sobre-mim .foto img:hover {
+.foto-sobre-mim img:hover {
     transform: scale(1.1);
 }
 
-#sobre-mim .texto {
+.texto-sobre-mim {
     max-width: 900px;
     text-align: justify;
+    margin: 0 auto; 
 }
 
-/* MELHORIA NA FONTE DO TEXTO "SOBRE MIM" */
-#sobre-mim .texto p {
-    font-family: 'Lato', sans-serif;
+.texto-sobre-mim h2 {
+    text-align: center; /* Centraliza o título em mobile */
+    margin-bottom: 30px;
+    /* Usa o estilo h2 global ajustado */
+}
+
+.texto-sobre-mim p {
+    font-family: 'Raleway', sans-serif; 
     font-size: 1.15em;
-    line-height: 1.7;
-    color: #303030;
+    font-weight: 600; 
+    line-height: 1.8; 
+    color: var(--cor-preto); 
+    margin-bottom: 20px;
 }
 
 
-/* Seção Habilidades Técnicas */
+/* Seção Habilidades Técnicas (Mantido) */
 #habilidades {
     background-color: var(--cor-cinza-claro);
 }
@@ -233,13 +338,12 @@ header nav ul li a:hover {
     font-size: 1.1em;
 }
 
-/* Seção Certificações */
+/* Seção Certificações (Mantido) */
 #certificacoes {
     background-color: var(--cor-azul-escuro);
     color: var(--cor-branco);
 }
 
-/* ESTILOS UNIFICADOS PARA OS CARROSSÉIS */
 .certificacoes-carrossel, .emblemas-carrossel {
     display: flex;
     gap: 25px;
@@ -248,17 +352,14 @@ header nav ul li a:hover {
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     cursor: grab;
-}
-
-.certificacoes-carrossel.active, .emblemas-carrossel.active {
-    cursor: grabbing;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-rosa-escuro) var(--cor-azul-escuro);
 }
 
 .certificado-card {
     flex: 0 0 auto;
     width: 320px;
-    height: auto;
-    min-height: 200px;
+    min-height: 220px; 
     background-color: var(--cor-branco);
     color: var(--cor-preto);
     border-radius: 12px;
@@ -268,8 +369,9 @@ header nav ul li a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between; 
+    align-items: flex-start;
+    border-left: 5px solid var(--cor-rosa-escuro); 
 }
 
 .certificado-card:hover {
@@ -277,20 +379,37 @@ header nav ul li a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* AJUSTE DE ESPECIFICIDADE PARA GARANTIR O ESTILO CORRETO */
+.detalhes-certificado {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+    align-items: flex-start;
+    width: 100%;
+}
+
 #certificacoes .certificado-card h3 {
-    text-align: center;
-    margin-bottom: 15px;
+    text-align: left; 
+    margin-bottom: 5px;
     font-size: 1.3em;
     color: var(--cor-azul-escuro);
+    font-weight: 700;
 }
 
 #certificacoes .certificado-card p {
     font-size: 1em;
-    text-align: center;
+    text-align: left;
     color: #555;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.detalhes-certificado i {
+    color: var(--cor-rosa-escuro);
+    font-size: 1.1em;
+}
 
 /* SEÇÃO DE ACREDITAÇÕES */
 #acreditacoes {
@@ -298,10 +417,37 @@ header nav ul li a:hover {
     color: var(--cor-preto);
 }
 
+#acreditacoes .sub-acreditacoes {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-style: normal;
+    color: #555; 
+    font-size: 1.1em;
+    font-weight: 400; 
+    padding: 0 10px;
+}
+
+/* AJUSTE PRINCIPAL: CENTRALIZAÇÃO HORIZONTAL */
+.emblemas-carrossel {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 25px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-rosa-escuro) var(--cor-azul-escuro);
+    
+    /* PROPRIEDADE PARA CENTRALIZAR O CONTEÚDO QUANDO COUBER NA TELA */
+    justify-content: center; 
+}
+
 .emblema-card {
     flex: 0 0 auto;
     width: 280px;
-    background-color: #fdfdfd; 
+    min-height: 320px; 
+    background-color: #fdfdfd;  
     color: var(--cor-preto);
     border-radius: 12px;
     padding: 20px;
@@ -310,7 +456,7 @@ header nav ul li a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; 
     align-items: center;
     gap: 15px;
 }
@@ -322,20 +468,31 @@ header nav ul li a:hover {
 
 .emblema-card img {
     max-width: 100%;
-    height: 180px;
+    height: 150px; 
     object-fit: contain;
+    margin-bottom: 10px;
 }
 
-.emblema-card p {
-    font-size: 1em;
-    font-weight: 600;
+.emblema-card .emblema-titulo {
+    font-size: 1.2em; /* Ligeiramente maior */
+    font-weight: 700;
     text-align: center;
     color: var(--cor-azul-escuro);
-    margin-top: auto; 
+    margin-bottom: 10px;
+}
+
+/* AJUSTE PARA MELHORAR A FONTE DA EXPLICAÇÃO */
+.emblema-card .emblema-descricao {
+    font-size: 1.05em; /* Aumenta a fonte para melhor leitura */
+    font-weight: 500; /* Deixa um pouco mais encorpado */
+    text-align: center;
+    color: #444; /* Cor mais escura para contraste */
+    line-height: 1.7; /* Aumenta a altura da linha para maior conforto visual */
+    flex-grow: 1; 
 }
 
 
-/* Seção Meus Projetos */
+/* Seção Meus Projetos (Mantido) */
 #projetos {
     background-color: var(--cor-cinza-claro);
     padding-bottom: 80px;
@@ -347,7 +504,7 @@ header nav ul li a:hover {
     margin-top: 10px;
 }
 
-/* Seção Dicas */
+/* Seção Dicas (Mantido) */
 #dicas {
     background-color: var(--cor-verde-limao);
     color: var(--cor-preto);
@@ -397,38 +554,158 @@ header nav ul li a:hover {
     color: var(--cor-preto);
 }
 
-/* Seção de Contato */
+/* Seção de Contato (MANTIDO) */
 #contato {
-    background-color: var(--cor-preto);
+    background-color: var(--cor-preto-fundo);
     color: var(--cor-branco);
+    padding: 100px 20px;
 }
 
-.mensagem-contato {
-    font-size: 1.3em;
-    margin-bottom: 40px;
-    color: var(--cor-cinza-claro);
+#contato h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: none; 
+    color: var(--cor-branco); 
+    font-family: 'Raleway', sans-serif; 
+    display: block; 
+}
+#contato h2::after {
+    content: none; 
 }
 
-.contato-links {
+
+.contato-titulo-sup {
+    font-size: 1em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--cor-cinza-texto);
+    margin-bottom: 0;
+}
+
+.contato-titulo-principal {
+    font-size: 3em;
+    margin-top: 0;
+    margin-bottom: 80px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+
+.contato-container {
     display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 50px;
+}
+
+.contato-esquerda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+}
+
+.contato-slogan {
+    font-size: 3.5em;
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.contato-direita {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contato-form input[type="text"],
+.contato-form input[type="email"],
+.contato-form textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--cor-branco);
+    color: var(--cor-branco);
+    padding: 10px 0;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+    border-bottom-color: var(--cor-rosa-escuro);
+}
+
+.contato-form::placeholder {
+    color: var(--cor-cinza-texto);
+    text-transform: uppercase;
+}
+.hidden-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+.botao-enviar {
+    background-color: var(--cor-preto-fundo);
+    color: var(--cor-branco);
+    border: 2px solid var(--cor-branco);
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.botao-enviar:hover {
+    background-color: var(--cor-rosa-escuro);
+    border-color: var(--cor-rosa-escuro);
+}
+
+/* Ícones de Contato - Visível */
+.contato-links-social {
+    display: flex; 
     justify-content: center;
     gap: 40px;
     font-size: 3em;
+    margin-top: 80px; 
 }
 
-.contato-links a {
+.contato-links-social a {
     color: var(--cor-branco);
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.contato-links a:hover {
+.contato-links-social a:hover {
     color: var(--cor-rosa-escuro);
     transform: scale(1.2);
 }
 
-/* Rodapé */
+
+/* Rodapé (Mantido) */
 footer {
-    background-color: var(--cor-preto);
+    background-color: var(--cor-preto-fundo);
     color: var(--cor-cinza-claro);
     text-align: center;
     padding: 1.5rem;
@@ -436,8 +713,63 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsividade (Ajustes para telas menores) */
+/* Responsividade (Mantido) */
+@media (min-width: 769px) {
+    .container-sobre-mim {
+        grid-template-columns: 350px 1fr; 
+        text-align: left; 
+    }
+
+    .foto-sobre-mim {
+        text-align: right; 
+    }
+
+    .texto-sobre-mim {
+        margin: 0; 
+    }
+
+    .texto-sobre-mim h2 {
+        text-align: left; 
+    }
+
+    /* Alinha o sublinhado à esquerda na visualização desktop */
+    h2::after {
+        margin: 10px 0 0 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .contato-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .contato-esquerda {
+        padding-right: 0;
+    }
+
+    .contato-slogan {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    
+    .contato-titulo-principal {
+        margin-bottom: 40px;
+    }
+
+    .botao-enviar {
+        align-self: center; 
+    }
+
+    .contato-direita {
+        width: 100%;
+    }
+}
+
+
 @media (max-width: 768px) {
+    /* Navegação Mobile */
     header {
         justify-content: space-between;
     }
@@ -449,7 +781,7 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--cor-preto);
+        background-color: var(--cor-preto-fundo);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding: 1rem 0;
         transform: translateY(-100%);
@@ -468,16 +800,44 @@ footer {
         display: block;
     }
 
-    #boas-vindas h1 {
-        font-size: 3em;
+    /* Ajustes Boas-Vindas Mobile */
+    #boas-vindas {
+        padding-top: 100px;
+        min-height: 80vh;
     }
 
-    #boas-vindas p {
-        font-size: 1.2em;
+    .big-title {
+        font-size: clamp(3em, 18vw, 10em);
     }
-
-    #sobre-mim .container {
+    
+    .info-bar {
         flex-direction: column;
+        align-items: center;
+        position: static;
+        margin-top: 30px;
+    }
+
+    .info-bar p {
+        text-align: center;
+    }
+    
+    .disponibilidade {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    #sobre-mim .container-sobre-mim {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .foto-sobre-mim img {
+        width: 250px; 
+        height: 250px;
+    }
+    
+    .texto-sobre-mim h2 {
+        text-align: center;
     }
 
     .habilidades-grid {
@@ -491,9 +851,19 @@ footer {
     h2 {
         font-size: 2em;
     }
+
+    .contato-links-social {
+        font-size: 2.5em;
+        gap: 20px;
+    }
+    
+    /* Centraliza o sublinhado no mobile */
+    h2::after {
+        margin: 10px auto 0;
+    }
 }
 
-/* Animação ao Rolar (Fade-in) */
+/* Animação ao Rolar (Fade-in - Mantido) */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);

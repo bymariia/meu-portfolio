@@ -174,7 +174,7 @@ header nav ul li a:hover {
 /* TÍTULOS GRANDES */
 .main-title {
     font-family: 'Lato', sans-serif; 
-    font-weight: 900;
+    font-weight: 800;
     font-size: clamp(3em, 12vw, 10em); /* Usando clamp para responsividade extrema */
     line-height: 0.9; 
     margin: 0;
